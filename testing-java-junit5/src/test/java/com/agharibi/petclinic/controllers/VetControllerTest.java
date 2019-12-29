@@ -12,6 +12,7 @@ import com.agharibi.petclinic.services.map.VetMapService;
 import com.agharibi.petclinic.services.springdatajpa.SpecialitySDJpaService;
 import com.agharibi.petclinic.services.springdatajpa.VetSDJpaService;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import java.util.HashSet;
@@ -40,7 +41,7 @@ class VetControllerTest {
         service.save(alexis);
     }
 
-
+    @Disabled
     @Test
     void listVets() {
         ModelMapImpl model = new ModelMapImpl();
