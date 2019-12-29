@@ -1,6 +1,8 @@
 package com.agharibi.petclinic.model;
 
 import com.agharibi.petclinic.ModelTests;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.RepeatedTest;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -26,5 +28,12 @@ class PersonTest implements ModelTests {
             () -> assertTrue(2L == person.getId(), "Person Id failed"),
             () -> assertEquals("Armen", person.getFirstName(), "First name test failed"),
             () -> assertEquals("Gharibi", person.getLastName(), "Last name test failed"));
+    }
+
+    @RepeatedTest(value = 10, name = "{displayName} : {currentRepetition} - {totalRepetitions}")
+    @DisplayName("repeated functional test")
+    @Test
+    void repeatedTest() {
+        // TODO - impl
     }
 }
