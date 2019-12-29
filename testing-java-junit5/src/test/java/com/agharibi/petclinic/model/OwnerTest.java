@@ -1,5 +1,6 @@
 package com.agharibi.petclinic.model;
 
+import com.agharibi.petclinic.CustomArgsProvider;
 import com.agharibi.petclinic.ModelTests;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -77,5 +78,13 @@ class OwnerTest implements ModelTests {
 
     static Stream<Arguments> getArgs() {
         return Stream.of(Arguments.of("FL", 1, 4), Arguments.of("WA", 2, 5), Arguments.of("FL", 6, 9));
+    }
+
+
+    @DisplayName("Custom provider Test - ")
+    @ParameterizedTest(name = "{displayName} [{index}] {arguments} ")
+    @ArgumentsSource(CustomArgsProvider.class)
+    void customProviderTest(String stateName, int value1, int value2) {
+        System.out.println(stateName + " = " + value1 + " : " + value2);
     }
 }
