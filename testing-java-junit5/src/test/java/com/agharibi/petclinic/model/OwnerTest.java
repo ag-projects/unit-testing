@@ -2,6 +2,9 @@ package com.agharibi.petclinic.model;
 
 import org.junit.jupiter.api.Test;
 
+
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.is;
 import static org.junit.jupiter.api.Assertions.*;
 
 class OwnerTest {
@@ -23,5 +26,10 @@ class OwnerTest {
                 () -> assertEquals("858-200-9800", owner.getTelephone(), "Phone number did not match.")
             )
         );
+
+        // hamcrest assertion
+        assertThat(owner.getCity(), is("Pasadena"));
     }
+
+
 }
