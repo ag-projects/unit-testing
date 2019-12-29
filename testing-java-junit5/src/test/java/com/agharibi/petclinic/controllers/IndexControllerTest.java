@@ -1,8 +1,11 @@
 package com.agharibi.petclinic.controllers;
 
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+
+import java.time.Duration;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -29,4 +32,20 @@ class IndexControllerTest {
         });
     }
 
+    @Test
+    void testTimeouts() {
+        assertTimeout(Duration.ofMillis(1000), () -> {
+                Thread.sleep(100);
+                System.out.println("The second statement in test method");
+            });
+    }
+
+    @Disabled
+    @Test
+    void testTimeoutPrempt() {
+        assertTimeoutPreemptively(Duration.ofMillis(100), () -> {
+            Thread.sleep(5000);
+            System.out.println("The second statement in test preemptive method");
+        });
+    }
 }
