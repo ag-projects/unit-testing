@@ -1,15 +1,13 @@
 package com.agharibi.petclinic.model;
 
-import org.junit.jupiter.api.Tag;
+import com.agharibi.petclinic.ModelTests;
 import org.junit.jupiter.api.Test;
-
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
 import static org.junit.jupiter.api.Assertions.*;
 
-@Tag("model")
-class OwnerTest {
+class OwnerTest implements ModelTests {
 
     @Test
     void dependentAssertions() {

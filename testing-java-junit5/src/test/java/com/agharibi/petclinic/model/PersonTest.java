@@ -1,12 +1,11 @@
 package com.agharibi.petclinic.model;
 
-import org.junit.jupiter.api.Tag;
+import com.agharibi.petclinic.ModelTests;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-@Tag("model")
-class PersonTest {
+class PersonTest implements ModelTests {
 
     @Test
     void groupAssertions() {
