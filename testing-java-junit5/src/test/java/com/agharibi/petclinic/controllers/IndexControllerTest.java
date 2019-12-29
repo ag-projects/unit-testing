@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Test;
 import java.time.Duration;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assumptions.assumeTrue;
 
 class IndexControllerTest {
 
@@ -47,5 +48,15 @@ class IndexControllerTest {
             Thread.sleep(5000);
             System.out.println("The second statement in test preemptive method");
         });
+    }
+
+    @Test
+    void testAssumptionsTrue() {
+        assumeTrue("STAGE".equalsIgnoreCase(System.getenv("STAGE_ENV")));
+    }
+
+    @Test
+    void testEnvAssumptionTrue() {
+        assumeTrue("DEV".equalsIgnoreCase("DEV"));
     }
 }
